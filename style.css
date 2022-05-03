@@ -1,0 +1,34 @@
+:root { /* root raiz do documento */
+    font-size: 62.5%; /* 1rem = 10px */
+--primary-color : hsl(170, 100%, 26%);
+--headline :hsl(210, 11%, 15%);
+--paragraph: hsl(210, 9%, 31%);
+
+}
+body {
+    font-family: 'DM Sans';
+    font-size: 1.6rem;
+    text-align: center;
+}
+/* 1 rem é 16px*/
+h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3.4rem;
+    color: var(--headline);
+    line-height: 130%;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 150%;
+    font-weight: 400;
+    color: var(--paragraph);
+}
+
+button {
+    color: var(--primary-color);
+}
