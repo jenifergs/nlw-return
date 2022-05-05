@@ -26,6 +26,7 @@ body {
     font-size: 1.6rem;
     text-align: center;
     box-sizing: border-box;
+    overflow: overlay;
 }
 
 ul {
@@ -171,13 +172,22 @@ nav.scroll svg:nth-child(1) path {
     fill: white;
 }
 
-nav.scroll svg:nth-child(2) path {
+nav.scroll button path {
     stroke: white;
 }
 
+nav button {
+background: none;
+border: none;
+cursor: pointer;
+}
 /* ================================= navigation MENU ===============================*/
 body.menu-expanded {
     overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+    display: none;
 }
 
 .menu,
@@ -187,9 +197,9 @@ body.menu-expanded .open-menu {
     visibility: hidden;
 }
 
-body.menu-expanded .hidden {
+/*body.menu-expanded .hidden {
     display: none;
-}
+}*/
 
 body.menu-expanded .menu,
 body.menu-expanded .close-menu {
@@ -257,7 +267,7 @@ line-height: 3.1rem;
 }
 
 body.menu-expanded .logo,
-body.menu-expanded button
+body.menu-expanded nav button
  {
     position: relative;
     z-index: 100;
