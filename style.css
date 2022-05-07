@@ -50,6 +50,37 @@ ul {
 section {
     padding-block: 10rem;
 }
+
+section header h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1.6rem;
+}
+
+section header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+
+    color: var(--headline);
+}
+
+section header h1 {
+    font-size: 3.4rem;
+    color: var(--headline);
+    line-height: 138%;
+    margin-bottom: 2.4rem;
+}
+
+section .content p {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+    color: var(--paragraph);
+}
 /* ================================= HOME ===============================*/
 #home::before { /* antes do conteudo*/
     content: "";
@@ -68,12 +99,6 @@ section {
   
     padding-top: calc(4.1rem + var(--nav-height));
 
-}
-/* 1 rem é 16px*/
-#home h4 {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1.6rem;
 }
 
 #home h1 {
@@ -154,9 +179,6 @@ section {
     font-size: 1.6rem;
     line-height: 150%;
 }
-
-
-
 /* ================================= navigation ===============================*/
 nav {
 display: flex;
@@ -165,8 +187,10 @@ height: var(--nav-height);
 
  position: fixed;
  top: 0;
- left: 50%;
- transform: translateX(-50%);
+ width: 100vw;
+
+ 
+ z-index: 100;
 }
 
 nav .wrapper {
@@ -177,10 +201,10 @@ nav .wrapper {
 
 nav.scroll {
     background: var(--primary-color);
-    width: 100vw;
+
 }
 
-nav.scroll svg:nth-child(1) path {
+nav.scroll path {
     fill: white;
 }
 
@@ -199,7 +223,7 @@ body.menu-expanded {
 }
 
 body.menu-expanded > :not(nav) {
-    display: none;
+    visibility: hidden;
 }
 
 .menu,
@@ -208,10 +232,6 @@ body.menu-expanded .open-menu {
     opacity: 0;
     visibility: hidden;
 }
-
-/*body.menu-expanded .hidden {
-    display: none;
-}*/
 
 body.menu-expanded .menu,
 body.menu-expanded .close-menu {
@@ -236,10 +256,6 @@ body.menu-expanded .menu {
 
     transition: transform 300ms;
     transform: translateY(0);
-}
-
-body.menu-expanded nav {
-    position: relative;
 }
 
 .menu ul:nth-child(1) {
@@ -299,24 +315,9 @@ body.menu-expanded button path {
 }
 
 /* =================================SERVICES ===============================*/
-
-#services header h4 {
-    font-size: 1.4rem;
-    line-height: 150%;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    color: var(--primary-color);
-    margin-bottom: 1.6rem;
-}
-
-#services header h2 {
-    font-size: 3rem;
-    line-height: 3.9rem;
-
-    color: var(--headline);
+#services h2 {
     margin-bottom: 6rem;
 }
-
 #services .cards {
     display: flex;
     flex-direction: column;
@@ -335,4 +336,18 @@ body.menu-expanded button path {
 
 #services .card h3 {
     margin-block: 1.6rem;
+}
+
+/* =================================SERVICES ===============================*/
+#about {
+    text-align: left;
+    background-color: var(--brand-beige);
+}
+#about h2 {
+    margin-bottom: 2.4rem;
+}
+
+#about .content p {
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
 }
