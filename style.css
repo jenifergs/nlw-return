@@ -6,10 +6,13 @@
 }
 :root { /* root raiz do documento */
     font-size: 62.5%; /* 1rem = 10px */
---primary-color : hsl(170, 100%, 26%);
+
+    --hue: 290;
+--primary-color : hsl(var(--hue), 100%, 26%);
 --headline :hsl(210, 11%, 15%);
 --paragraph: hsl(210, 9%, 31%);
---green-light: hsl(148, 23%, 89%);
+
+--brand-light: hsl(calc(var(--hue) - 22 )148, 23%, 89%);
 --brand-beige: hsl(39, 100%, 97%);
 --bg-light: hsl(180, 14%, 97%);
 --brand-hoover: hsl(170, 100%, 14%);
@@ -123,7 +126,7 @@ section .content p {
     content: "";
     width: 100%;
     height: calc(108rem + var(--nav-height));
-    background-color: var(--green-light);
+    background-color: var(--brand-light);
     display: block;
     
     position: absolute;
@@ -171,7 +174,7 @@ section .content p {
     margin-inline: auto;
 
     background-color: var(--brand-beige);
-    border: 1px solid var(--green-light);
+    border: 1px solid var(--brand-light);
     border-radius: 0.6rem;
 
     display: flex;
@@ -222,10 +225,6 @@ nav.scroll {
 
 nav.scroll path {
     fill: white;
-}
-
-nav.scroll button path {
-    stroke: white;
 }
 
 nav button {
@@ -308,6 +307,13 @@ line-height: 3.1rem;
     margin-bottom: 8rem;
 }
 
+.menu .button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+
+    filter: brightness(1.2);
+}
+
 .social-links {
     display: flex;
     gap: 3.2rem;
@@ -345,7 +351,7 @@ body.menu-expanded button path {
     text-align: left;
     background: white;
 
-    border: 1px solid var(--green-light);
+    border: 1px solid var(--brand-light);
 
     border-radius: .6rem ;
 }
@@ -353,6 +359,8 @@ body.menu-expanded button path {
 #services .card h3 {
     margin-block: 1.6rem;
 }
+
+
 
 /* =================================SERVICES ===============================*/
 #about {
@@ -418,4 +426,56 @@ fill: #fff;
 footer p {
     color: var(--brand-beige);
     line-height: 2;
+
+    margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+    justify-content: flex-start;
+}
+
+
+/* back to top */
+
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(100%);
+    transition: 800ms;
+}
+
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+/* custom colors*/
+#services .card circle {
+    fill: var(--brand-light);
+}
+
+#backToTopButton circle,
+#navigation .logo path[fill*='#00856F'] {
+    fill: var(--primary-color);
+}
+
+button.open-menu path[stroke*='#00856F'],
+#contact li path {
+    stroke: var(--primary-color)
+}
+
+body.menu-expanded #navegation .logo path,
+#navigation.scroll .logo path{
+    fill: white;
+}
+
+#navigation.scroll button.open-menu path {
+    stroke: white;
 }
