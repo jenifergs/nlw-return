@@ -12,6 +12,7 @@
 --green-light: hsl(148, 23%, 89%);
 --brand-beige: hsl(39, 100%, 97%);
 --bg-light: hsl(180, 14%, 97%);
+--brand-hoover: hsl(170, 100%, 14%);
 
 --nav-height : 7.2rem;
 }
@@ -35,6 +36,10 @@ body {
     overflow: overlay;
 
     background-color: var(--bg-light);
+}
+
+img {
+    max-width: 100%;
 }
 
 ul {
@@ -81,6 +86,38 @@ section .content p {
     line-height: 150%;
     color: var(--paragraph);
 }
+
+.button {
+    background: var(--primary-color);
+
+    border: none;
+    border-radius: 4rem;
+
+    margin-bottom: 6rem;
+
+    padding: 1.6rem 3.2rem;
+    width: fit-content;
+
+    color: #fff;
+
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700; 
+
+    display: flex; /* meche com os filhso dentro da caixa */
+    align-items: center; /* alinha os itens no centro entre eles*/
+    justify-content: center;
+    gap: 1.6rem; /* espaço entre os filhos*/ 
+
+    text-decoration: none;
+    transition: background 200ms;
+}
+
+.button:hover {
+    background-color: var(--brand-hoover);
+}
+
+
 /* ================================= HOME ===============================*/
 #home::before { /* antes do conteudo*/
     content: "";
@@ -117,36 +154,15 @@ section .content p {
     margin-bottom: 3.2rem;
 }
 
+#home .button {
+    margin-inline: auto;
+}
+
 #home img {
     width: 26.4rem;
     display: block;
     margin-inline: auto;
     object-position: 0 2rem;  
-}
-
-#home button {
-    background: var(--primary-color);
-
-    border: none;
-    border-radius: 4rem;
-
-    margin-bottom: 6rem;
-
-    height: 6.2rem;
-    width: 26.3rem;
-
-    color: #fff;
-
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 700; 
-
-    display: flex; /* meche com os filhso dentro da caixa */
-    align-items: center; /* alinha os itens no centro entre eles*/
-    justify-content: center;
-    gap: 1.6rem; /* espaço entre os filhos*/ 
-
-    margin-inline: auto;
 }
 
 #home .stats {
@@ -350,4 +366,56 @@ body.menu-expanded button path {
 #about .content p {
     margin-top: 2.4rem;
     margin-bottom: 6rem;
+}
+
+/* =================================SERVICES ===============================*/
+#contact {
+    text-align: left;
+
+}
+
+#contact header {
+    margin-bottom: 3.2rem;
+}
+
+#contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    margin-bottom: 3.2rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+
+
+footer {
+    background-color: var(--primary-color);
+    padding-block: 6rem;
+
+    text-align: left;
+    color: #fff;
+}
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+    width: 23.6rem;
+    height: 3.1rem;
+}
+footer .logo path {
+fill: #fff;
+}
+
+footer p {
+    color: var(--brand-beige);
+    line-height: 2;
 }
