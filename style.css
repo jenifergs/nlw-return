@@ -4,20 +4,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root { /* root raiz do documento */
-    font-size: 62.5%; /* 1rem = 10px */
+
+:root {
+    /* root raiz do documento */
+    font-size: 62.5%;
+    /* 1rem = 10px */
 
     --hue: 290;
---primary-color : hsl(var(--hue), 100%, 26%);
---headline :hsl(210, 11%, 15%);
---paragraph: hsl(210, 9%, 31%);
+    --primary-color: hsl(var(--hue), 100%, 26%);
+    --headline: hsl(210, 11%, 15%);
+    --paragraph: hsl(210, 9%, 31%);
 
---brand-light: hsl(calc(var(--hue) - 22 )148, 23%, 89%);
---brand-beige: hsl(39, 100%, 97%);
---bg-light: hsl(180, 14%, 97%);
---brand-hoover: hsl(170, 100%, 14%);
+    --brand-light: hsl(calc(var(--hue) - 22)148, 23%, 89%);
+    --brand-ligh2: hsla(calc(var(--hue) + 10), 14%, 97%, 1);
 
---nav-height : 7.2rem;
+    --brand-beige: hsl(39, 100%, 97%);
+    --bg-light: hsl(180, 14%, 97%);
+    --brand-hoover: hsl(170, 100%, 14%);
+
+    --nav-height: 7.2rem;
 }
 
 html {
@@ -27,8 +32,8 @@ html {
 
 html,
 body {
-width: 100%;
-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -50,10 +55,10 @@ ul {
 }
 
 .wrapper {
-    width: 37.5rem;
+    width: min(50rem, 100%);
     margin-inline: auto;
     padding-inline: 2.4rem;
-} 
+}
 
 section {
     padding-block: 10rem;
@@ -105,12 +110,15 @@ section .content p {
 
     text-transform: uppercase;
     font-size: 1.4rem;
-    font-weight: 700; 
+    font-weight: 700;
 
-    display: flex; /* meche com os filhso dentro da caixa */
-    align-items: center; /* alinha os itens no centro entre eles*/
+    display: flex;
+    /* meche com os filhso dentro da caixa */
+    align-items: center;
+    /* alinha os itens no centro entre eles*/
     justify-content: center;
-    gap: 1.6rem; /* espaço entre os filhos*/ 
+    gap: 1.6rem;
+    /* espaço entre os filhos*/
 
     text-decoration: none;
     transition: background 200ms;
@@ -122,21 +130,22 @@ section .content p {
 
 
 /* ================================= HOME ===============================*/
-#home::before { /* antes do conteudo*/
+#home::before {
+    /* antes do conteudo*/
     content: "";
     width: 100%;
-    height: calc(108rem + var(--nav-height));
+    height: calc( 76% + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
-    
+
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    }
+}
 
 #home {
-  
+padding-block: 0;
     padding-top: calc(4.1rem + var(--nav-height));
 
 }
@@ -146,7 +155,7 @@ section .content p {
     color: var(--headline);
     line-height: 130%;
     margin-bottom: 2.4rem;
-    
+
 }
 
 #home p {
@@ -165,11 +174,11 @@ section .content p {
     width: 26.4rem;
     display: block;
     margin-inline: auto;
-    object-position: 0 2rem;  
+    object-position: 0 2rem;
 }
 
 #home .stats {
-    width: 32.7rem;
+    width: 100%;
     padding-block: 4rem;
     margin-inline: auto;
 
@@ -182,8 +191,10 @@ section .content p {
     justify-content: center;
     align-items: center;
 
-    gap: 6rem; /* seraparação entre os filhso stat*/
+    gap: 6rem;
+    /* seraparação entre os filhso stat*/
 }
+
 #home .stat h3 {
     font-size: 4.8rem;
     color: var(--headline);
@@ -192,24 +203,31 @@ section .content p {
     margin-bottom: 0.4rem;
 
 }
+
 #home .stat p {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.6rem;
     line-height: 150%;
 }
+
 /* ================================= navigation ===============================*/
 nav {
-display: flex;
- 
-height: var(--nav-height);
+    display: flex;
 
- position: fixed;
- top: 0;
- width: 100vw;
+    height: var(--nav-height);
 
- 
- z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+
+    z-index: 100;
+}
+
+nav .menu,
+nav .close-menu {
+    position: fixed;
 }
 
 nav .wrapper {
@@ -228,16 +246,17 @@ nav.scroll path {
 }
 
 nav button {
-background: none;
-border: none;
-cursor: pointer;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
+
 /* ================================= navigation MENU ===============================*/
 body.menu-expanded {
     overflow: hidden;
 }
 
-body.menu-expanded > :not(nav) {
+body.menu-expanded> :not(nav) {
     visibility: hidden;
 }
 
@@ -259,7 +278,6 @@ body.menu-expanded .close-menu {
 }
 
 body.menu-expanded .menu {
-    position: fixed;
     top: 0;
     left: 0;
     background: var(--primary-color);
@@ -274,21 +292,22 @@ body.menu-expanded .menu {
 }
 
 .menu ul:nth-child(1) {
-display: flex;
-flex-direction: column;
-gap: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
 
-margin-top: 6rem;
+    margin-top: 6rem;
 
-font-weight: 700;
-font-size: 2.4rem;
-line-height: 3.1rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
 }
 
 .menu ul li a {
     color: white;
     text-decoration: none;
 }
+
 .menu .button {
     background: #fff;
     border-radius: 4rem;
@@ -298,7 +317,7 @@ line-height: 3.1rem;
     text-transform: uppercase;
     text-decoration: none;
 
-    color:  var(--primary-color);
+    color: var(--primary-color);
 
     display: inline-block;
     padding: 16px 32px;
@@ -322,8 +341,7 @@ line-height: 3.1rem;
 }
 
 body.menu-expanded .logo,
-body.menu-expanded nav button
- {
+body.menu-expanded nav button {
     position: relative;
     z-index: 100;
 }
@@ -340,10 +358,11 @@ body.menu-expanded button path {
 #services h2 {
     margin-bottom: 6rem;
 }
+
 #services .cards {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem ;
+    gap: 3.2rem;
 }
 
 #services .card {
@@ -353,7 +372,7 @@ body.menu-expanded button path {
 
     border: 1px solid var(--brand-light);
 
-    border-radius: .6rem ;
+    border-radius: .6rem;
 }
 
 #services .card h3 {
@@ -367,6 +386,7 @@ body.menu-expanded button path {
     text-align: left;
     background-color: var(--brand-beige);
 }
+
 #about h2 {
     margin-bottom: 2.4rem;
 }
@@ -419,8 +439,9 @@ footer .logo svg {
     width: 23.6rem;
     height: 3.1rem;
 }
+
 footer .logo path {
-fill: #fff;
+    fill: #fff;
 }
 
 footer p {
@@ -472,10 +493,245 @@ button.open-menu path[stroke*='#00856F'],
 }
 
 body.menu-expanded #navegation .logo path,
-#navigation.scroll .logo path{
+#navigation.scroll .logo path {
     fill: white;
 }
 
 #navigation.scroll button.open-menu path {
     stroke: white;
+}
+
+@media screen and (min-width: 102.4rem) {
+
+    /* ====================== geral =========================*/
+    body {
+        overflow: auto;
+    }
+    .wrapper {
+            width: min(112rem, 100%);
+            display: grid;
+    }
+
+    section {
+        padding-block: 16rem;
+    }
+
+    section h2 {
+        font-size: 4rem;
+        line-height: 5.2rem;
+    }
+
+
+
+
+
+    /* ====================== geral =========================*/
+
+
+
+
+
+
+    /* ====================== geral =========================*/
+
+
+    /* ==== RESET ====*/
+
+    nav#navigation .wrapper * {
+        margin: 0;
+        padding: 0;
+        visibility: initial;
+        display: initial;
+        opacity: initial;
+        flex-direction: initial;
+        position: initial;
+        font-size: initial;
+        transform: initial;
+        color: initial;
+        background-color: initial;
+        font-weight: initial;
+        filter: initial;
+    }
+
+    nav#navigation .close-menu,
+    nav#navigation .open-menu,
+    nav#navigation .social-links {
+        display: none;
+    }
+
+    nav#navigation .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+    nav#navigation .menu ul:nth-child(1) {
+        display: flex;
+        gap: 3.2rem;
+    }
+
+    nav#navigation .menu ul li a {
+        color: var(--primary-color);
+        opacity: 0.7;
+    }
+
+    nav#navigation .menu a.button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2.4rem;
+
+        border: 1px solid var(--primary-color);
+        border-radius: 4rem;
+
+        color: var(--primary-color);
+
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        text-transform: uppercase;
+    }
+
+    nav#navigation .menu a.button:hover {
+        background-color: var(--primary-color);
+        border: none;
+        color: #fff;
+    }
+    
+    nav#navigation.scroll .menu ul li a {
+        color: var(--brand-ligh2);
+        opacity: 0.6;
+    }
+
+
+    nav#navigation.scroll .menu a.button {
+        border-color: white;
+        color: white;
+    }
+
+    nav#navigation .menu li a {
+        transition: opacity .4s;
+    }
+
+    nav#navigation .menu li a:hover {
+        opacity: 1;
+        font-weight: 700;
+    }
+
+    nav#navigation .menu li a::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background-color: var(--primary-color);
+
+        position: relative;
+        bottom: -2rem;
+        left: -0.5rem;
+
+        display: block;
+
+        transition: width 0.2s;
+    }
+
+    nav#navigation.scroll .menu li a::after {
+        background-color: white;
+
+    }
+
+    nav#navigation .menu li a:hover::after,
+    nav#navigation .menu li a:active::after {
+        padding-inline: 0.8rem;
+        width: 100%;
+
+    }
+
+    nav#navigation.scroll .menu li a:hover,
+    nav#navigation .menu li a:active::after {
+        opacity: 1;
+    }
+
+    nav#navigation.scroll .menu a.button:hover,
+    nav#navigation.scroll .menu li a:active::after {
+        background-color: var(--primary-color);
+        filter: brightness(1.3);
+        border: none;
+    }
+    /* ====================== HOME =========================*/
+#home::before {
+    height: calc(90% - var(--nav-height));
+}
+
+#home {
+    padding-top: var(--nav-height);
+}
+
+#home .wrapper {
+    grid-template-columns: 60.56rem 1fr;
+    grid-template-areas: 'A B'
+    'C C';
+}
+
+#home .col-a {
+    grid-area: A;
+    text-align: left;
+    align-self: center;
+}
+
+#home .col-b {
+    grid-area: B;
+}
+
+#home .stats {
+    grid-area: C;
+
+    flex-direction: row;
+    padding: 6rem;
+    gap: 0;
+}
+
+#home .stats .stat + .stat {
+    border-left: 1px solid var(--primary-color);
+}
+
+#home .stats .stat {
+    flex: 1;
+}
+
+#home .button {
+    margin: 0;
+}
+
+#home img {
+    width: 42rem;
+}
+
+#home h1 {
+    font-size: 5.2rem;
+}
+
+#home .content p {
+    font-size: 1.8rem;
+}
+/* ============== SERVICES ================*/
+#services h2 {
+    width: 47rem;
+    margin-inline: auto;
+}
+
+#services .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+#services .card {
+    width: 30%;
+    flex-grow: 1;
+}
+
+/* ============== ABOUT ================*/
+
+
+
 }
