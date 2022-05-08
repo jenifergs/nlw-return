@@ -11,16 +11,16 @@
     /* 1rem = 10px */
 
     --hue: 290;
-    --primary-color: hsl(var(--hue), 100%, 26%);
+    --primary-color: hsl(0, 65%, 48%);
     --headline: hsl(210, 11%, 15%);
     --paragraph: hsl(210, 9%, 31%);
 
-    --brand-light: hsl(calc(var(--hue) - 22)148, 23%, 89%);
-    --brand-ligh2: hsla(calc(var(--hue) + 10), 14%, 97%, 1);
+    --brand-light: hsl(0, 100%, 95%);
+    --brand-ligh2: hsl(0, 100%, 98%);
 
-    --brand-beige: hsl(39, 100%, 97%);
-    --bg-light: hsl(180, 14%, 97%);
-    --brand-hoover: hsl(170, 100%, 14%);
+    --brand-beige: hsl(0, 100%, 98%);
+    --bg-light: hsl(0, 0%, 98%);
+    --brand-hoover: hsl(0, 72%, 30%);
 
     --nav-height: 7.2rem;
 }
