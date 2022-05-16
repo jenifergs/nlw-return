@@ -783,3 +783,13 @@ footer p {
 }
 
 }
+
+
+
+#path-youtube {
+    fill: transparent;
+}
+
+svg path {
+    fill: white
+}
