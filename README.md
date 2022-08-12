@@ -8,5 +8,3 @@ Foi utilizado html, css além de javaScript.
 ## Link para o projeto
 [Clique aqui para ser redirecionado](jenifergs.github.io/project-landing-page/)
 
-Print da aplicação 
-![print-adivinhe-a-cor](assets/projeto-landing-page.png)
