@@ -11,13 +11,6 @@ function onScroll () {
    activateMenuAtCurrentSection(contact)
 }
 
-
-
-
-
-
-
-
 function activateMenuAtCurrentSection (section) {
 const targetLine = scrollY + innerHeight /2;
 
@@ -40,26 +33,16 @@ if(sectionBoundaries) {
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function showNavOnScoll () {
+   const navigation = document.querySelector('#navigation')
+
    if (scrollY > 0 ) {
       navigation.classList.add('scroll')
+      console.log('entrou if ');
    } else {
       navigation.classList.remove('scroll')
+      console.log('entrou else ');
+
    }
 }
 

@@ -6,7 +6,6 @@
 }
 
 :root {
-    /* root raiz do documento */
     font-size: 62.5%;
     /* 1rem = 10px */
 
@@ -42,7 +41,6 @@ body {
     text-align: center;
     box-sizing: border-box;
     overflow: overlay;
-
     background-color: var(--bg-light);
 }
 
@@ -235,7 +233,7 @@ nav .wrapper {
     align-items: center;
     justify-content: space-between;
 }
-
+ 
 nav.scroll {
     background: var(--primary-color);
 
@@ -381,7 +379,7 @@ body.menu-expanded button path {
 
 
 
-/* =================================SERVICES ===============================*/
+/* ================================= SERVICES ===============================*/
 #about {
     text-align: left;
     background-color: var(--brand-beige);
@@ -396,7 +394,7 @@ body.menu-expanded button path {
     margin-bottom: 6rem;
 }
 
-/* =================================SERVICES ===============================*/
+/* ================================= CONTACTS ===============================*/
 #contact {
     text-align: left;
 
@@ -420,7 +418,7 @@ body.menu-expanded button path {
     gap: 0.8rem;
 }
 
-
+/* ================================= FOOTER ===============================*/
 
 footer {
     background-color: var(--primary-color);
@@ -456,7 +454,8 @@ footer .social-links {
 }
 
 
-/* back to top */
+/* ================================= BACK TO TOP ===============================*/
+
 
 #backToTopButton {
     position: fixed;
@@ -503,7 +502,7 @@ body.menu-expanded #navegation .logo path,
 
 @media screen and (min-width: 102.4rem) {
 
-    /* ====================== geral =========================*/
+    /* ====================== GERAL DESKTOP =========================*/
     body {
         overflow: auto;
     }
@@ -528,18 +527,6 @@ body.menu-expanded #navegation .logo path,
 .bol-b {
     grid-area: B;
 }
-
-
-
-    /* ====================== geral =========================*/
-
-
-
-
-
-
-    /* ====================== geral =========================*/
-
 
     /* ==== RESET ====*/
 
@@ -783,9 +770,6 @@ footer p {
 }
 
 }
-
-
-
 #path-youtube1, #path-youtube2 {
     fill: transparent;
 }
